@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eef5db;
+  height: 80vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+.form {
+  /* background: #dda448; */
+  width: 50%;
+  height: 80%;
+  overflow: hidden;
+}
+
+.form .section__name {
+  position: relative;
+  margin: 20px auto;
+  /* background: blue; */
+  /* padding: 5px; */
+}
+
+.form .section__name input {
+  width: 100%;
+  height: 50%;
+  color: #030027;
+  padding-top: 20px;
+  border: none;
+  outline: none;
+}
+
+.form .section__name label {
+  position: absolute;
+  bottom: 0px;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid rgba(37, 37, 37, 0.582);
+}
+
+.form label::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid #727ae9;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.content-name {
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  transition: all 0.3s ease;
+}
+
+.form input:focus + .label-name .content-name,
+.form input:valid + .label-name .content-name {
+  transform: translateY(-150%);
+  font-size: 14px;
+  color: #727ae9;
+}
+
+.form input:focus + .label-name::after,
+.form input:valid + .label-name::after {
+  transform: translateX(0%);
+}
